@@ -16,5 +16,4 @@ public class PersonDto {
     private IdentificationDocument document;
     private Occupaction occupaction;
     private Address address;
-    private String occupation;
 }

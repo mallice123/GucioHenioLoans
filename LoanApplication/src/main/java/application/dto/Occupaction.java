@@ -1,5 +1,6 @@
 package application.dto;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class Occupaction {
+    private Long id;
     private String employeeName;
     private LocalDate startDate;
     private LocalDate endDate;
