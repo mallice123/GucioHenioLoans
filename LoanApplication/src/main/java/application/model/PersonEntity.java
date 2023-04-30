@@ -1,6 +1,7 @@
 package application.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,10 +12,12 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Builder
 public class PersonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private Long id;
+
     @Column(name = "firstName", nullable = false)
     private String firstName;
 

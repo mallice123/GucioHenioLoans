@@ -1,6 +1,7 @@
 package application.controller;
 
 import application.service.RegistrationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,11 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class RegistrationController {
     private RegistrationService registrationService;
 
-/*
+    @Autowired
     public RegistrationController(RegistrationService registrationService){
         this.registrationService = registrationService;
     }
-*/
 
 }
 
