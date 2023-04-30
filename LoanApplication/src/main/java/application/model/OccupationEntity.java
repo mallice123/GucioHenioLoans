@@ -1,6 +1,7 @@
 package application.model;
 
 import jakarta.persistence.*;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,12 +9,12 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table
+@Table(name = "occupation")
 @Getter
 @Setter
 public class OccupationEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "employeeName", nullable = false)

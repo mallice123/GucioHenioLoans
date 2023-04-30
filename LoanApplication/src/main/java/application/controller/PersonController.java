@@ -1,6 +1,5 @@
 package application.controller;
 
-
 import application.model.Person;
 import application.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;

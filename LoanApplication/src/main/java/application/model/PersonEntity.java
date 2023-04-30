@@ -1,24 +1,42 @@
 package application.model;
 
-import jakarta.persistence.Entity;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
-@Table
-@En
+@Table(name = "person")
+@Entity
+@Getter
+@Setter
 public class PersonEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private Long id;
-    @Column
+    @Column(name = "firstName", nullable = false)
     private String firstName;
+
+    @Column(name = "lastName", nullable = false)
     private String lastName;
+
+    @Column(name = "birthDate", nullable = false)
     private LocalDate birthDate;
+
+    @Column(name = "phoneNumber", nullable = false)
     private String phoneNumber;
-    private IdentificationDocument document;
-    private Occupation occupation;
-    private Address address;
+
+    @OneToMany()
+    @JoinColumn(name = "document_id")
+    private List<IdentificationDocumentEntity> document;
+
+    @OneToMany()
+    @JoinColumn(name = "occupation_id")
+    private List<OccupationEntity> occupation;
+
+    @OneToMany()
+    @JoinColumn(name = "address_id")
+    private List<AddressEntity> address;
 
 }

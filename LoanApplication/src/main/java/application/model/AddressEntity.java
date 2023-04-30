@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 public class AddressEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "email", nullable = false)
@@ -25,4 +25,7 @@ public class AddressEntity {
     @Column(name = "streetName", nullable = false)
     private String streetName;
 
+    @ManyToOne
+    @JoinColumn(name = "person_id")
+    private PersonEntity personEntity;
 }
