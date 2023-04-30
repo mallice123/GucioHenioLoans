@@ -1,4 +1,4 @@
-package application.dto;
+package application.model;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Builder
 @Data
-public class PersonDto {
+public class Person {
     private Long id;
     private String firstName;
     private String lastName;
@@ -16,4 +16,5 @@ public class PersonDto {
     private IdentificationDocument document;
     private Occupation occupation;
     private Address address;
+
 }

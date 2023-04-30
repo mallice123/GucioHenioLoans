@@ -1,4 +1,4 @@
-package application.dto;
+package application.model;
 
 import lombok.Data;
 import lombok.Getter;

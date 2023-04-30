@@ -1,28 +1,28 @@
 package application.controller;
 
+
+import application.model.Person;
+import application.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import application.dto.PersonDto;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/person")
 public class PersonController {
+    private PersonService personService;
+
+    @Autowired
+    public PersonController(PersonService personService) {
+        this.personService = personService;
+    }
 
     @GetMapping
-    public List<PersonDto> getPersons() {
-    return List.of(
-            PersonDto.builder()
-                    .firstName("Jakub")
-                    .lastName("Szarubka")
-                    .birthDate(LocalDate.of(1990,11,05))
-                    .phoneNumber("793-767-343")
-                    .build());
+    public List<Person> getPersons(){
+        return personService.getPersons();
     }
 
 }
-
-
