@@ -14,6 +14,6 @@ public class PersonDto {
     private LocalDate birthDate;
     private String phoneNumber;
     private IdentificationDocument document;
-    private Occupaction occupaction;
+    private Occupation occupation;
     private Address address;
 }
