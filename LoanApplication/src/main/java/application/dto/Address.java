@@ -9,7 +9,6 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-@Builder
 public class Address {
     private Long id;
     private String email;
