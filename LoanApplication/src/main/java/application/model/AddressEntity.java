@@ -5,12 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "address")
+@Table(name = "address",schema = "applicationschema")
 @Getter
 @Setter
 public class AddressEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "address_seq")
+    @SequenceGenerator(name = "address_seq", sequenceName = "address_id_seq", allocationSize = 1, schema = "applicationschema")
     private Long id;
 
     @Column(name = "email", nullable = false)

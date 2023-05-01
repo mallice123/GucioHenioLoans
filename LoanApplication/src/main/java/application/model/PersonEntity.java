@@ -7,29 +7,30 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.util.List;
 
-@Table(name = "person")
 @Entity
+@Table(name = "person", schema = "applicationschema")
 @Getter
 @Setter
 public class PersonEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_seq")
+    @SequenceGenerator(name = "person_seq", sequenceName = "person_id_seq", allocationSize = 1, schema = "applicationschema")
     private Long id;
 
-    @Column(name = "firstName", nullable = false)
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "lastName", nullable = false)
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "birthDate", nullable = false)
+    @Column(name = "birth_date", nullable = false)
     private LocalDate birthDate;
 
-    @Column(name = "phoneNumber", nullable = false)
+    @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
     @OneToMany()
-    @JoinColumn(name = "document_id")
+    @JoinColumn(name = "identification_document_id")
     private List<IdentificationDocumentEntity> document;
 
     @OneToMany()

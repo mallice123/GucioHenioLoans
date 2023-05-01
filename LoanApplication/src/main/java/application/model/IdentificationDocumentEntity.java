@@ -8,12 +8,13 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 @Entity
-@Table
+@Table(name = "identification_document", schema = "applicationschema")
 @Getter
 @Setter
 public class IdentificationDocumentEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "identification_document_seq")
+    @SequenceGenerator(name = "identification_document_seq", sequenceName = "identification_document_id_seq", allocationSize = 1, schema = "applicationschema")
     private Long id;
 
     @Column(name = "document_id", nullable = false)
@@ -22,10 +23,10 @@ public class IdentificationDocumentEntity {
     @Column(name = "personal_id", nullable = false)
     private Long personalID;
 
-    @Column(name = "creation_date", nullable = false)
+    @Column(name = "date_of_creation", nullable = false)
     private LocalDate dateOfCreation;
 
-    @Column(name = "expiry_date", nullable = false)
+    @Column(name = "expiry_date_of_document", nullable = false)
     private LocalDate expiryDateOfDocument;
 
 }

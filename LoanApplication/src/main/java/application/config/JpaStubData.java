@@ -6,14 +6,13 @@ import application.repository.PersonRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Configuration
 public class JpaStubData {
-
-    private static ModelMapper mapper;
-
 
     @Bean
     CommandLineRunner commandLineRunner(PersonRepository personRepository) {
@@ -30,6 +29,7 @@ public class JpaStubData {
                     .birthDate(LocalDate.of(1989,12,21))
                     .phoneNumber("793-767-343")
                     .build();
+            ModelMapper mapper = new ModelMapper();
             PersonEntity jakubEntity = mapper.map(jakub, PersonEntity.class);
             PersonEntity korneliaEntity = mapper.map(kornelia, PersonEntity.class);
             personRepository.saveAll(List.of(jakubEntity,korneliaEntity));
