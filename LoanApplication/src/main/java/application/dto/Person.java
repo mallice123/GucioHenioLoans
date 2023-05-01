@@ -1,4 +1,4 @@
-package application.model;
+package application.dto;
 
 import lombok.Builder;
 import lombok.Data;

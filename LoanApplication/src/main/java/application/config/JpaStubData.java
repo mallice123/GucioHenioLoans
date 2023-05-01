@@ -1,6 +1,6 @@
 package application.config;
 
-import application.model.Person;
+import application.dto.Person;
 import application.model.PersonEntity;
 import application.repository.PersonRepository;
 import org.modelmapper.ModelMapper;
