@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('/src/main/resources/blackAndWhite.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            color: #fff; /* Change the text color to white */
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #fff; /* Change the text color to white */
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <title>Registration Form</title>
+</head>
+<body>
+<h1>Registration Form</h1>
+
+<form id="registrationForm" method="post" action="/submit_registration">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <label for="birthDate">Birth Date:</label>
+    <input type="date" id="birthDate" name="birthDate" required>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+    <h2>Address</h2>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="address.email" required>
+
+    <label for="postalCode">Postal Code:</label>
+    <input type="text" id="postalCode" name="address.postalCode" required>
+
+    <label for="town">Town:</label>
+    <input type="text" id="town" name="address.town" required>
+
+    <label for="streetName">Street Name:</label>
+    <input type="text" id="streetName" name="address.streetName" required>
+
+    <h2>Identification Document</h2>
+    <label for="documentId">Document ID:</label>
+    <input type="number" id="documentId" name="identificationDocument.documentId" required>
+
+    <label for="personalID">Personal ID:</label>
+    <input type="number" id="personalID" name="identificationDocument.personalID" required>
+
+    <label for="dateOfCreation">Date of Creation:</label>
+    <input type="date" id="dateOfCreation" name="identificationDocument.dateOfCreation" required>
+
+    <label for="expiryDateOfDocument">Expiry Date of Document:</label>
+    <input type="date" id="expiryDateOfDocument" name="identificationDocument.expiryDateOfDocument" required>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

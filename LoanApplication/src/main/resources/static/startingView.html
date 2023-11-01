@@ -17,6 +17,10 @@
     label[type="email"], label[type="password"] {
       font-size: 24px;
     }
+    label {
+      background-color: lightgray; /* Change the background color to your desired color */
+      padding: 5px; /* Add padding for spacing */
+    }
 
     /* change color of input fields */
     input[type="email"] {
@@ -50,7 +54,7 @@
       <div id="passwordValidationMessage" style="color: red;"></div>
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
-    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="submit" class="btn btn-primary" onclick="redirectToRegistration()">Register</button>
   </form>
 </div>
 
@@ -64,12 +68,16 @@
     var regex = /^(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,}$/;
 
     if (!regex.test(password)) {
-      passwordValidationMessage.textContent = "Password must be at least 6 characters long and contain at least one special character (!@#$%^&*)";
+      passwordValidationMessage.textContent = "Password is too short ! Usually it's 6 or more digits and special sign !";
       return false; // Prevent form submission
     } else {
       passwordValidationMessage.textContent = "";
       return true; // Allow form submission
     }
+  }
+  function redirectToRegistration() {
+    // Redirect to the registration page when the "Register" button is clicked
+    window.location.href = "registrationForm.html";
   }
 </script>
 </body>
