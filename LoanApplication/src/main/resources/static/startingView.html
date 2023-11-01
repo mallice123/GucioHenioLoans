@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome to GucioHenioLoans</title>
+  <title>Welcome to Pug Loans</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -30,16 +30,16 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">GucioHenioLoans</a>
+  <a class="navbar-brand" href="#">Pug Loans</a>
 </nav>
 
 <div class="jumbotron text-center">
-  <h1>Welcome to GucioHenioLoans!</h1>
+  <h1>Welcome to Pug Loans!</h1>
   <p>We are here to help you get the loan you need.</p>
 </div>
 
 <div class="container">
-  <form>
+  <form id="registrationForm" onsubmit="return validatePassword()">
     <div class="form-group">
       <label for="email">Email address:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email">
@@ -47,9 +47,30 @@
     <div class="form-group">
       <label for="pwd">Password:</label>
       <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+      <div id="passwordValidationMessage" style="color: red;"></div>
     </div>
+    <button type="submit" class="btn btn-primary">Login</button>
     <button type="submit" class="btn btn-primary">Register</button>
   </form>
 </div>
+
+<script>
+  function validatePassword() {
+    var passwordField = document.getElementById("pwd");
+    var password = passwordField.value;
+    var passwordValidationMessage = document.getElementById("passwordValidationMessage");
+
+    // Check if the password is at least 6 characters long and contains at least one special character
+    var regex = /^(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,}$/;
+
+    if (!regex.test(password)) {
+      passwordValidationMessage.textContent = "Password must be at least 6 characters long and contain at least one special character (!@#$%^&*)";
+      return false; // Prevent form submission
+    } else {
+      passwordValidationMessage.textContent = "";
+      return true; // Allow form submission
+    }
+  }
+</script>
 </body>
 </html>

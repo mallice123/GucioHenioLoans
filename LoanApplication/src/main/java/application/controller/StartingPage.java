@@ -1,10 +1,10 @@
-package application;
+package application.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class startingPageDemo {
+public class StartingPage {
 
     @RequestMapping("/")
     public String home() {

@@ -1150,7 +1150,7 @@ That's all there is to it!
 
 
 
-Java Native Access 4.5.2 (drivers/jna-4.5.2.jar, drivers/jna-platform-4.5.2.jar)
+Java Native Access 4.5.2 (drivers/jna-4.5.2.jar, drivers/jna-platformDb-4.5.2.jar)
 --------------------------------------------------------------------------------
 Source: https://github.com/java-native-access/jna
 
@@ -12450,7 +12450,7 @@ Source: https://github.com/google/j2objc/blob/master/LICENSE
 
 --------------------------------------------------------------------------------
 The next section, BSD-3-Clause, applies to the files in:
-jre_emul/android/platform/libcore/ojluni/src/main/java/java/time
+jre_emul/android/platformDb/libcore/ojluni/src/main/java/java/time
 --------------------------------------------------------------------------------
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:

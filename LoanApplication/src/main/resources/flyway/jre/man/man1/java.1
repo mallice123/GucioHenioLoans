@@ -317,7 +317,7 @@ package description at http://docs\&.oracle\&.com/javase/8/docs/api/java/lang/in
 .sp -1
 .IP \(bu 2.3
 .\}
-Agent Command Line Options in the JVM Tools Interface guide at http://docs\&.oracle\&.com/javase/8/docs/platform/jvmti/jvmti\&.html#starting
+Agent Command Line Options in the JVM Tools Interface guide at http://docs\&.oracle\&.com/javase/8/docs/platformDb/jvmti/jvmti\&.html#starting
 .RE
 .RE
 .PP
@@ -1055,7 +1055,7 @@ to indicate MB,
 \fBg\fR
 or
 \fBG\fR
-to indicate GB\&. The default value depends on the platform:
+to indicate GB\&. The default value depends on the platformDb:
 .sp
 .RS 4
 .ie n \{\
@@ -1420,7 +1420,7 @@ to indicate megabytes,
 \fBg\fR
 or
 \fBG\fR
-to indicate gigabytes\&. The default value depends on the platform:
+to indicate gigabytes\&. The default value depends on the platformDb:
 .sp
 .RS 4
 .ie n \{\
@@ -1632,7 +1632,7 @@ Only the Java HotSpot Server VM supports this option\&.
 .RS 4
 Sets the size (in bytes) of the prefetch distance for object allocation\&. Memory about to be written with the value of new objects is prefetched up to this distance starting from the address of the last allocated object\&. Each Java thread has its own allocation point\&.
 .sp
-Negative values denote that prefetch distance is chosen based on the platform\&. Positive values are bytes to prefetch\&. Append the letter
+Negative values denote that prefetch distance is chosen based on the platformDb\&. Positive values are bytes to prefetch\&. Append the letter
 \fBk\fR
 or
 \fBK\fR
@@ -1663,7 +1663,7 @@ Only the Java HotSpot Server VM supports this option\&.
 .PP
 \-XX:AllocatePrefetchInstr=\fIinstruction\fR
 .RS 4
-Sets the prefetch instruction to prefetch ahead of the allocation pointer\&. Only the Java HotSpot Server VM supports this option\&. Possible values are from 0 to 3\&. The actual instructions behind the values depend on the platform\&. By default, the prefetch instruction is set to 0:
+Sets the prefetch instruction to prefetch ahead of the allocation pointer\&. Only the Java HotSpot Server VM supports this option\&. Possible values are from 0 to 3\&. The actual instructions behind the values depend on the platformDb\&. By default, the prefetch instruction is set to 0:
 .sp
 .if n \{\
 .RS 4
@@ -2961,7 +2961,7 @@ The following example shows how to set the maximum tenuring threshold to 10:
 .PP
 \-XX:MetaspaceSize=\fIsize\fR
 .RS 4
-Sets the size of the allocated class metadata space that will trigger a garbage collection the first time it is exceeded\&. This threshold for a garbage collection is increased or decreased depending on the amount of metadata used\&. The default size depends on the platform\&.
+Sets the size of the allocated class metadata space that will trigger a garbage collection the first time it is exceeded\&. This threshold for a garbage collection is increased or decreased depending on the amount of metadata used\&. The default size depends on the platformDb\&.
 .RE
 .PP
 \-XX:MinHeapFreeRatio=\fIpercent\fR

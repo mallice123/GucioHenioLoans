@@ -1,6 +1,6 @@
 //
 // Permissions required by modules stored in a run-time image and loaded
-// by the platform class loader.
+// by the platformDb class loader.
 //
 // NOTE that this file is not intended to be modified. If additional
 // permissions need to be granted to the modules in this file, it is
