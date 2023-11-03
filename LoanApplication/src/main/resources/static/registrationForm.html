@@ -68,33 +68,19 @@
     <label for="phoneNumber">Phone Number:</label>
     <input type="tel" id="phoneNumber" name="phoneNumber" required>
 
-    <h2>Address</h2>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="address.email" required>
-
-    <label for="postalCode">Postal Code:</label>
-    <input type="text" id="postalCode" name="address.postalCode" required>
-
-    <label for="town">Town:</label>
-    <input type="text" id="town" name="address.town" required>
-
-    <label for="streetName">Street Name:</label>
-    <input type="text" id="streetName" name="address.streetName" required>
-
-    <h2>Identification Document</h2>
-    <label for="documentId">Document ID:</label>
-    <input type="number" id="documentId" name="identificationDocument.documentId" required>
-
-    <label for="personalID">Personal ID:</label>
-    <input type="number" id="personalID" name="identificationDocument.personalID" required>
-
-    <label for="dateOfCreation">Date of Creation:</label>
-    <input type="date" id="dateOfCreation" name="identificationDocument.dateOfCreation" required>
-
-    <label for="expiryDateOfDocument">Expiry Date of Document:</label>
-    <input type="date" id="expiryDateOfDocument" name="identificationDocument.expiryDateOfDocument" required>
-
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" id="submitButton">
 </form>
+<script>
+    // Add an event listener to the form submission
+    document.getElementById('registrationForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        // You can perform any necessary form validation here before redirecting
+
+        // Redirect to registrationAddress.html
+        window.location.href = 'registrationAddress.html';
+    });
+</script>
+
 </body>
 </html>
