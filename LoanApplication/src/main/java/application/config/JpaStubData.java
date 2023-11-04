@@ -27,7 +27,7 @@ public class JpaStubData {
                 Person jakub = Person.builder()
                         .firstName("Jakub")
                         .lastName("Woźniak")
-                        .birthDate(LocalDate.of(1990, 11, 05))
+                        .birthDate(LocalDate.of(1990, 11, 5))
                         .phoneNumber("793-767-343")
                         .build();
                 Person kornelia = Person.builder()
