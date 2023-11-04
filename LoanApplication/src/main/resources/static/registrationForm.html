@@ -7,15 +7,29 @@
             background-repeat: no-repeat;
             background-size: cover;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         h1 {
             text-align: center;
-            color: #fff; /* Change the text color to white */
+            color: #fff;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            max-width: 400px;
+            text-align: left;
         }
         label {
             display: block;
             margin-bottom: 10px;
-            color: #fff; /* Change the text color to white */
+            color: #333;
         }
         input[type="text"],
         input[type="date"],
@@ -39,22 +53,13 @@
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #0056b3; /* Darker shade on hover */
-        }
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            background-color: #0056b3;
         }
     </style>
     <title>Registration Form</title>
 </head>
 <body>
 <h1>Registration Form</h1>
-
 <form id="registrationForm" method="post" action="/submit_registration">
     <label for="firstName">First Name:</label>
     <input type="text" id="firstName" name="firstName" required>
@@ -68,19 +73,34 @@
     <label for="phoneNumber">Phone Number:</label>
     <input type="tel" id="phoneNumber" name="phoneNumber" required>
 
-    <input type="submit" value="Submit" id="submitButton">
+    <input type="submit" value="Submit">
 </form>
 <script>
     // Add an event listener to the form submission
     document.getElementById('registrationForm').addEventListener('submit', function (e) {
         e.preventDefault(); // Prevent the default form submission
 
-        // You can perform any necessary form validation here before redirecting
+        // Place for validation of the fields (e.g., check if fields are filled)
 
-        // Redirect to registrationAddress.html
-        window.location.href = 'registrationAddress.html';
+        // If validation is successful, submit the form to the server
+        fetch('/submit_registration', {
+            method: 'POST',
+            body: new FormData(document.getElementById('registrationForm'))
+        })
+            .then(response => {
+                // Handle the response here, e.g., show success or error messages
+                if (response.status === 200) {
+                    // Form submission was successful, redirect to registrationAddress.html
+                    window.location.href = 'registrationAddress.html';
+                } else {
+                    window.location.href = 'startingView.html';
+                }
+            })
+            .catch(error => {
+                // Handle network or server errors
+                console.error('Error:', error);
+            });
     });
 </script>
-
 </body>
 </html>
