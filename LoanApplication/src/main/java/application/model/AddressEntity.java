@@ -15,9 +15,6 @@ public class AddressEntity {
     @SequenceGenerator(name = "address_seq", sequenceName = "address_id_seq", allocationSize = 1, schema = "applicationschema")
     private Long id;
 
-    @Column(name = "email", nullable = false)
-    private String email;
-
     @Column(name = "postCode", nullable = false, length = 20)
     private String postalCode;
 

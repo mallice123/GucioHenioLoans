@@ -20,7 +20,6 @@ public class AddressRegistrationController {
         System.out.println("Post code " + addressForm.getPostalCode());
         System.out.println("Town form " + addressForm.getTown());
         System.out.println("Street name " + addressForm.getStreetName());
-        System.out.println("Email form " + addressForm.getEmail());
         return ResponseEntity.status(HttpStatus.OK).body("Address data saved successfully");
     }
 
