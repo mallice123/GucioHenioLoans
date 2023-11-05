@@ -16,13 +16,13 @@
     }
     h1 {
       text-align: center;
-      color: #fff;
+      color: #000;
     }
     form {
       background-color: rgba(255, 255, 255, 0.8);
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      padding: 20px;
+      padding: 65px;
       max-width: 400px;
       text-align: left;
     }
@@ -59,8 +59,9 @@
   <title>Occupation form</title>
 </head>
 <body>
-<h1>Occupation Form</h1>
 <form id="occupationForm" method="post" action="/submit_occupation">
+  <h1>Occupation Form</h1>
+
   <label for="employeeName">Employer Name:</label>
   <input type="text" id="EmployeeName" name="EmployeeName" required>
 
@@ -94,9 +95,9 @@
               // Handle the response here, e.g., show success or error messages
               if (response.status === 200) {
                 // Form submission was successful, redirect to registrationAddress.html
-                window.location.href = 'startingView.html';
+                window.location.href = 'registrationFinished.html';
               } else {
-               // window.location.href = 'startingView.html';
+                window.location.href = 'startingView.html';
               }
             })
             .catch(error => {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('/src/main/resources/congratulationsPug.jpeg');
+            background-repeat: no-repeat;
+            background-size: contain; /* Change 'cover' to 'contain' */
+            background-position: center center; /* Center the image */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #000;
+        }
+        #message {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+    <script>
+        setTimeout(function () {
+            var message = document.getElementById('message');
+            message.style.display = 'block';
+            setTimeout(function () {
+                window.location.href = 'startingView.html';
+            }, 6000); // Redirect after 5 seconds
+        }, 100); // Show message after 100 milliseconds
+    </script>
+</head>
+<body>
+<div id="message">
+    <p>Congratulations! Your account has been created. Please login!</p>
+</div>
+</body>
+</html>
