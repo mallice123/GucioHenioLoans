@@ -1,6 +1,6 @@
 package application.repository;
 
-import application.modelDto.model.OccupationEntity;
+import application.model.OccupationEntity;
 
 public interface OccupationRepository extends GenericRepository<OccupationEntity, Long> {
 }

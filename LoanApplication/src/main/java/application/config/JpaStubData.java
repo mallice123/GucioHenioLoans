@@ -1,7 +1,7 @@
 package application.config;
 
 import application.modelDto.Person;
-import application.modelDto.model.PersonEntity;
+import application.model.PersonEntity;
 import application.repository.DataStubRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;

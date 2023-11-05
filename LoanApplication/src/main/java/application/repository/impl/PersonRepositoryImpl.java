@@ -1,6 +1,6 @@
 package application.repository.impl;
 
-import application.modelDto.model.PersonEntity;
+import application.model.PersonEntity;
 import application.repository.PersonRepository;
 
 import java.util.Optional;
