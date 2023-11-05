@@ -1,10 +1,9 @@
 package application.repository;
 
-import application.model.PersonEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
+import application.modelDto.model.PersonEntity;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonRepository extends JpaRepository<PersonEntity, Long> {
+public interface PersonRepository extends GenericRepository<PersonEntity, Long> {
 
 }

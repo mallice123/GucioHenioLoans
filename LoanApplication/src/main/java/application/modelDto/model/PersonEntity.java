@@ -1,4 +1,4 @@
-package application.model;
+package application.modelDto.model;
 
 import jakarta.persistence.*;
 
@@ -29,6 +29,9 @@ public class PersonEntity {
 
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
+
+    @Column(name = "password")
+    private String password;
 
     @OneToMany()
     @JoinColumn(name = "identification_document_id")

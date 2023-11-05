@@ -1,8 +1,8 @@
 package application.config;
 
 import application.modelDto.Person;
-import application.model.PersonEntity;
-import application.repository.PersonRepository;
+import application.modelDto.model.PersonEntity;
+import application.repository.DataStubRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -21,7 +21,7 @@ public class JpaStubData {
         this.data = data;
     }
     @Bean
-    CommandLineRunner commandLineRunner(PersonRepository personRepository) {
+    CommandLineRunner commandLineRunner(DataStubRepository dataStubRepository) {
         return args -> {
             if(data) {
                 Person jakub = Person.builder()
@@ -39,7 +39,7 @@ public class JpaStubData {
                 ModelMapper mapper = new ModelMapper();
                 PersonEntity jakubEntity = mapper.map(jakub, PersonEntity.class);
                 PersonEntity korneliaEntity = mapper.map(kornelia, PersonEntity.class);
-                personRepository.saveAll(List.of(jakubEntity, korneliaEntity));
+                dataStubRepository.saveAll(List.of(jakubEntity, korneliaEntity));
             }
         };
     }

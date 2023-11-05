@@ -13,6 +13,7 @@ public class Person {
     private String lastName;
     private LocalDate birthDate;
     private String phoneNumber;
+    private String password;
     private IdentificationDocument document;
     private Occupation occupation;
     private Address address;

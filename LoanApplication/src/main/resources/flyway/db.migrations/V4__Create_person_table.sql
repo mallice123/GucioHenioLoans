@@ -4,6 +4,7 @@ CREATE TABLE person (
                         last_name VARCHAR(255) NOT NULL,
                         birth_date DATE,
                         phone_number VARCHAR(20),
+                        password VARCHAR(255),
                         identification_document_id BIGINT,
                         occupation_id BIGINT,
                         address_id BIGINT,
